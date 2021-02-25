@@ -1,1 +1,1 @@
-web: gunicorn covid_response.wsgi
+web: gunicorn locallibrary.wsgi --log-file -
