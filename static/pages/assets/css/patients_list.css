@@ -1,0 +1,22 @@
+body {
+  background: #e8f3fc;
+  min-height: 100vh;
+}
+
+.breadcrumbs {
+background-color: #f1f7fd;
+}
+
+.special h1{
+  font-size: 800px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #2c4964;
+}
+
+
+.text-gray {
+  color: #aaa;
+}

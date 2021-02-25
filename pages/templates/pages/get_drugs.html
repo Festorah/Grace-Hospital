@@ -1,0 +1,73 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} | Get Drugs {% endblock %}
+{% block content %}
+
+<!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Get Drugs</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Get Drugs</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <!-- The image half -->
+                <!-- <div class="col-md-6 d-none d-md-flex bg-image"></div> -->
+
+
+                <!-- The content half -->
+                <div class="col-md-10 bg-light">
+                    <div class="login d-flex align-items-center py-5">
+
+                        <!-- Demo content-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-xl-7 mx-auto">
+                                    <h3 class="display-4">Get Drugs</h3>
+                                    <p class="text-muted mb-4">Fill the form to make your request for the covid-19 vaccine</p>
+                                    <form action="{% url 'my-drug' %}" method="POST">
+                                      {% csrf_token %}
+                                        <div class="form-group mb-4">
+                                          <!-- <h6>Name</h6> -->
+                                            <input id="inputEmail" type="text" name="name" placeholder="Your Name" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                          <!-- <h6>Email</h6> -->
+                                            <input id="inputEmail" type="email" name="email" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                          <!-- <h6>Verification Number</h5> -->
+                                            <input id="inputEmail" type="text" name="verification_number" placeholder="Verification Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                          <!-- <h6>Verification Number</h5> -->
+                                            <input id="inputEmail" type="text" name="phone_number" placeholder="Phone Number" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">My covid-19 Drugs</button>
+                                        <div class="text-center d-flex justify-content-between mt-4"><p>Snippet by <a href="https://bootstrapious.com/snippets" class="font-italic text-muted"> 
+                                                <u>Boostrapious</u></a></p></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!-- End -->
+
+                    </div>
+                </div><!-- End -->
+
+            </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

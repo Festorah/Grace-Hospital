@@ -1,0 +1,50 @@
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <center>
+              <h1 style="font-size: 30px; padding: 50px; margin-top: 50px;" class="mb-5"><strong>STATE HOSPITAL ASUBIARO, OSOGBO, OSUN STATE, NIGERIA.</strong></h1>
+            </center>
+            <div class="m-5">
+              <h2 style="text-align: center; font-size: 20px;"><ins>CONFIRMATION OF COVID-19 TEST RESULT</ins></h2>
+            </div>
+            <div style="margin: 20px; font-weight: 600px;" class="container">
+              <table style="" class="table table-borderless">
+                <tbody style="font-size: 15px;">
+                  <tr style="font-size: 16px; margin: 10px;">
+                    <td colspan="2">Patient Name: </td>
+                    <td>{{ patient.name }}</td>
+                  </tr>
+                  <tr style="font-size: 16px; margin: 10px;">
+                    <td colspan="2">Address: </td>
+                    <td>{{ patient.address }}</td>
+                  </tr>
+                  <tr style="margin: 15px;">
+                    <td colspan="2">Age:</td>
+                    <td>{{ patient.age }} years old</td>
+                  </tr>
+                  <tr style="margin: 15px;">
+                    <td colspan="2">Verification Number</td>
+                    <td>{{ patient.verification }}</td>
+                  </tr>
+                  <tr style="margin: 15px;">
+                    <td colspan="2">Date Sample Taken:</td>
+                    <td>{{ patient.date_tested }}</td>
+                  </tr>
+                  <tr style="margin: 15px;">
+                    <td colspan="2">Sample Type: </td>
+                    <td>Nose and Throat swab</td>
+                  </tr>
+                  <tr style="margin: 15px;">
+                    <td colspan="2">Test Result: SARS-CoV-2 RNA testing</td>
+                    <td>{{ patient.test_result }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h1 class="text-center"> Testing was performed by Molecular Diagnostic Unit (WHO accredited)</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+

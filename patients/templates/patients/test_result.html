@@ -1,0 +1,77 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} | Result{% endblock %}
+{% block content %}
+<!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <center>
+              <h2 class="mb-5"><strong>STATE HOSPITAL ASUBIARO, OSUN STATE, NIGERIA.</strong></h2>
+            </center>
+            <div class="m-5">
+              <h4 class="text-center"><ins>CONFIRMATION OF COVID-19 TEST RESULT</ins></h4>
+            </div>
+            <div class="container">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th colspan="2" scope="col"><strong><h3>Patient Name:</h3></strong></th>
+                    <th scope="col"><h3>{{ name2.name }}</h3></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2"><strong>Gender:</strong></td>
+                    <td>{{ name2.gender }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><strong>Age:</strong></td>
+                    <td>{{ name2.age }} years old.</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><strong>Verification Number</strong></td>
+                    <td>{{ name2_id }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><strong>Date Sample Taken:</strong></td>
+                    <td>{{ name2.date_tested }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><strong>Sample Type:</strong></td>
+                    <td>Nose and Throat swab</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><strong>Test Result:</strong> SARS-CoV-2 RNA testing</td>
+                    <td>{{ name2.test_result }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h6 class="text-center">Testing was performed by Molecular Diagnostic Unit (WHO accredited)</h6>
+            </div>
+            <div>
+              <center>
+                <button type="button" class="btn btn-primary m-4"><a style="color: #ffffff" href="{% url 'render-pdf-view' name2.pk %}"> Download PDF</a></button>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}
