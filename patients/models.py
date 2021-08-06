@@ -32,8 +32,16 @@ class Patient(models.Model):
 	verification = models.CharField(max_length=200, blank=False, default='osun')
 	phone_number = models.BigIntegerField(default=2347000000, blank=True)
 
+	extra_field = models.CharField(choices=CHOICE, default=AWAITING, max_length=100)
+
 	def __str__(self):
 		return self.name
 
 	def get_absolute_url(self):
 		return reverse('patient-detail', kwargs={'pk':self.pk})
+
+	def save(self, commit=True):
+		extra_field = self.cleaned_data.get('extra_field', None)
+		# ...do something with extra_field here...
+		return super(Patient, self).save(commit=commit)
+

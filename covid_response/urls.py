@@ -25,6 +25,7 @@ urlpatterns = [
         name='password_reset_complete'),
     path('', include('pages.urls')),
     path('patients/', include('patients.urls')),
+    path('api/', include('api_basic.urls')),
 
 ]
 

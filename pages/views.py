@@ -4,13 +4,36 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 from django.contrib import messages
-from .models import DrugRequest
+from .models import DrugRequest, Contact, Newsletter
 from django.contrib.auth.decorators import login_required
 
 
 
 
 def home(request):
+
+	if request.method == 'POST':
+		contact = Contact()
+		newsletter = Newsletter()
+
+		contact.name = request.POST.get('name')
+		contact.email = request.POST.get('email')
+		contact.subject = request.POST.get('subject')
+		contact.message = request.POST.get('message')
+
+		newsletter.email = request.POST.get('newsletter_email')
+
+		if contact.name != None:
+			contact.save()
+			messages.success(request, 'Thank you for subscribing for our newsletter. You will hear from us soon.')
+
+		if newsletter.email != None:
+			newsletter.save()
+		
+			messages.success(request, 'Thank you for contacting us. You will hear from us soon.')
+
+		return render(request, 'pages/home.html')
+
 	return render(request, 'pages/home.html')
 
 def check_result(request):
