@@ -12,7 +12,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-SECRET_KEY = 'o8j_so!dx)s%#dp2te!bxr9@=y)qzm-gz%3=%7$_y7+p_5gefv'
+
+SECRET_KEY = os.environ.get('GRACE_SECRET_KEY')
 
 DEBUG = True
 
